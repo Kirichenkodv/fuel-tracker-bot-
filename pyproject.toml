@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "fuel-tracker-bot-"
+version = "0.1.0"
+description = ""
+authors = ["kirichenko dmitriy <kirichenko.dmitriy1977@gmail.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+
+[tool.poetry.group.dev.dependencies]
+ruff = "^0.11.13"
+pre-commit = "^4.2.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
