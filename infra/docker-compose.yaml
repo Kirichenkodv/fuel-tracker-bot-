@@ -1,0 +1,16 @@
+# Определение томов (volumes) для хранения данных
+volumes:
+  postgres_data:  # Том для хранения данных PostgreSQL
+    name: fuel-tracker-postgres_data  # Имя тома
+
+# Определение сервисов
+services:
+  postgres:  # Сервис PostgreSQL
+    container_name: fuel-tracker-db  # Имя контейнера
+    image: postgres:15-alpine  # Используемый образ (PostgreSQL 15 на Alpine Linux)
+    env_file:
+      - .env  # Файл с переменными окружения
+    ports:
+      - "5432:5432"  # Проброс портов (хост:контейнер)
+    volumes:
+      - postgres_data:/var/lib/postgresql/data  # Подключение тома к папке с данными PostgreSQL
